@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .rps-container {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .rps-buttons button {
+      padding: 1rem 2rem;
+      margin: 0.5rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      background-color: #ff7f7f;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .rps-buttons button:hover {
+      background-color: #e63e3e;
+    }
+
+    .rps-result {
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎮 Rock Paper Scissors</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="project1-basic-webpage.html">Project 1</a></li>
+        <li><a href="project2-rock-paper-scissors.html" aria-current="page">Project 2</a></li>
+        <li><a href="project3-flatland-advisor.html">Project 3</a></li>
+        <li><a href="project4-rss-reader.html">Project 4</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="rps-container">
+      <h2>Choose Your Move</h2>
+      <div class="rps-buttons">
+        <button onclick="play('rock')">✊ Rock</button>
+        <button onclick="play('paper')">✋ Paper</button>
+        <button onclick="play('scissors')">✌️ Scissors</button>
+      </div>
+      <div class="rps-result" id="result"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Bippin Volthaly Appadu | Rock Paper Scissors Game</p>
+  </footer>
+
+  <script>
+    function play(playerChoice) {
+      const choices = ['rock', 'paper', 'scissors'];
+      const computerChoice = choices[Math.floor(Math.random() * 3)];
+      let resultText = `You chose ${playerChoice}. Computer chose ${computerChoice}. `;
+
+      if (playerChoice === computerChoice) {
+        resultText += "It's a draw!";
+      } else if (
+        (playerChoice === 'rock' && computerChoice === 'scissors') ||
+        (playerChoice === 'paper' && computerChoice === 'rock') ||
+        (playerChoice === 'scissors' && computerChoice === 'paper')
+      ) {
+        resultText += "You win! 🎉";
+      } else {
+        resultText += "You lose 😢";
+      }
+
+      document.getElementById("result").textContent = resultText;
+    }
+  </script>
+</body>
+</html>
