@@ -2,106 +2,142 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rock Paper Scissors</title>
-  <link rel="stylesheet" href="../css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rock Paper Scissors - Against Computer</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #111;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 3rem 1rem;
+      background: linear-gradient(to right, #3a7bd5, #00d2ff);
       text-align: center;
     }
 
-    header, footer {
-      background-color: #333;
-      color: white;
-      padding: 1rem;
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
 
-    nav ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
+    header .icons {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
+    .section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
     }
 
-    .rps-container {
-      margin-top: 2rem;
+    h2 {
+      color: #00d2ff;
+      margin-bottom: 1rem;
     }
 
     .rps-buttons {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
       gap: 1rem;
-      margin-bottom: 1rem;
+      margin: 1rem 0;
     }
 
-    .rps-buttons button, .reset-btn {
+    .rps-buttons button {
+      font-size: 1.5rem;
       padding: 1rem 2rem;
-      font-size: 1.2rem;
-      cursor: pointer;
       background-color: #ff7f7f;
       border: none;
       color: white;
-      border-radius: 8px;
+      border-radius: 10px;
+      cursor: pointer;
       transition: background 0.3s;
     }
 
-    .rps-buttons button:hover, .reset-btn:hover {
+    .rps-buttons button:hover {
       background-color: #e63e3e;
     }
 
-    .rps-result, .rps-score, .rps-choices {
+    .result-box {
       margin-top: 1rem;
-      font-size: 1.2rem;
-      font-weight: bold;
+      text-align: center;
+      font-size: 1.3rem;
     }
 
-    .reset-btn {
-      margin-top: 1.5rem;
-      background-color: #888;
+    .score {
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+
+    ul {
+      margin-left: 1.2rem;
+    }
+
+    footer {
+      background-color: #222;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>🎮 Rock Paper Scissors</h1>
-    <nav>
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="project1-basic-webpage.html">Project 1</a></li>
-        <li><a href="project2-rock-paper-scissors.html" aria-current="page">Project 2</a></li>
-        <li><a href="project3-flatland-advisor.html">Project 3</a></li>
-        <li><a href="project4-rss-reader.html">Project 4</a></li>
-      </ul>
-    </nav>
+    <div class="icons">🪨 📄 ✂️</div>
+    <h1>ROCK PAPER SCISSORS</h1>
+    <p><strong>online (vs Computer)</strong></p>
   </header>
 
-  <main>
-    <section class="rps-container">
-      <h2>Choose Your Move</h2>
-      <div class="rps-buttons">
-        <button aria-label="Choose Rock" onclick="play('rock')">✊ Rock</button>
-        <button aria-label="Choose Paper" onclick="play('paper')">✋ Paper</button>
-        <button aria-label="Choose Scissors" onclick="play('scissors')">✌️ Scissors</button>
-      </div>
-      <div class="rps-choices" id="choices"></div>
-      <div class="rps-result" id="result"></div>
-      <div class="rps-score" id="score">Player: 0 | Computer: 0</div>
-      <button class="reset-btn" onclick="resetGame()">🔄 Reset</button>
-    </section>
-  </main>
+  <div class="section">
+    <h2>About</h2>
+    <p>Rock Paper Scissors is a fun and simple game we all know from childhood. This version lets you play instantly against the computer — no need to wait for a friend!</p>
+  </div>
+
+  <div class="section">
+    <h2>How to Play</h2>
+    <p>Click on one of the buttons below to make your move. The computer will randomly choose its move. Can you beat it?</p>
+  </div>
+
+  <div class="section">
+    <h2>Play Now</h2>
+    <div class="rps-buttons">
+      <button onclick="play('rock')">🪨 Rock</button>
+      <button onclick="play('paper')">📄 Paper</button>
+      <button onclick="play('scissors')">✂️ Scissors</button>
+    </div>
+    <div class="result-box" id="resultBox">
+      <div id="choices"></div>
+      <div id="result"></div>
+      <div class="score" id="score">Player: 0 | Computer: 0</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>What are the Rules?</h2>
+    <ul>
+      <li>If you choose Rock, you win against Scissors but lose against Paper.</li>
+      <li>If you choose Scissors, you win against Paper but lose against Rock.</li>
+      <li>If you choose Paper, you win against Rock but lose against Scissors.</li>
+    </ul>
+    <p>The game can go as long as you want. Play again as many times as you like!</p>
+  </div>
+
+  <div class="section">
+    <h2>Interesting Facts</h2>
+    <ol>
+      <li>The game originated in China in the 17th century, not Europe or America.</li>
+      <li>Stats say people tend to choose Scissors first, then Rock.</li>
+      <li>A robot in Japan can win every time by predicting your muscle movements!</li>
+    </ol>
+  </div>
 
   <footer>
-    <p>© 2025 Bippin Volthaly Appadu | Rock Paper Scissors Game</p>
+    © 2025 Bippin Volthaly Appadu | Rock Paper Scissors Game
   </footer>
 
   <script>
@@ -109,47 +145,42 @@
     let computerScore = 0;
 
     const emojiMap = {
-      rock: "✊",
-      paper: "✋",
-      scissors: "✌️"
+      rock: "🪨",
+      paper: "📄",
+      scissors: "✂️"
     };
 
     function play(playerChoice) {
       const choices = ['rock', 'paper', 'scissors'];
       const computerChoice = choices[Math.floor(Math.random() * 3)];
 
-      // Show emoji choices
-      document.getElementById("choices").innerHTML = `You: ${emojiMap[playerChoice]} &nbsp;&nbsp; vs &nbsp;&nbsp; Computer: ${emojiMap[computerChoice]}`;
+      const playerEmoji = emojiMap[playerChoice];
+      const computerEmoji = emojiMap[computerChoice];
 
-      let resultText = "";
+      document.getElementById("choices").innerHTML = `You: ${playerEmoji} vs Computer: ${computerEmoji}`;
+
+      let result = "";
 
       if (playerChoice === computerChoice) {
-        resultText = "It's a draw!";
+        result = "It's a draw!";
       } else if (
         (playerChoice === 'rock' && computerChoice === 'scissors') ||
         (playerChoice === 'paper' && computerChoice === 'rock') ||
         (playerChoice === 'scissors' && computerChoice === 'paper')
       ) {
-        resultText = "You win! 🎉";
+        result = "You win! 🎉";
         playerScore++;
       } else {
-        resultText = "You lose 😢";
+        result = "You lose 😢";
         computerScore++;
       }
 
-      document.getElementById("result").textContent = resultText;
+      document.getElementById("result").textContent = result;
       document.getElementById("score").textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
-    }
-
-    function resetGame() {
-      playerScore = 0;
-      computerScore = 0;
-      document.getElementById("result").textContent = "";
-      document.getElementById("score").textContent = "Player: 0 | Computer: 0";
-      document.getElementById("choices").innerHTML = "";
     }
   </script>
 </body>
 </html>
+
 
 
