@@ -6,84 +6,95 @@
   <title>Rock Paper Scissors</title>
   <link rel="stylesheet" href="../css/style.css" />
   <style>
-    .rps-container {
+    body {
+      background: linear-gradient(to right, #8B0000, #ff4d4d);
+      color: white;
       text-align: center;
-      margin-top: 2rem;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 2rem;
     }
 
-    .rps-buttons button {
-      padding: 1rem 2rem;
-      margin: 0.5rem;
-      font-size: 1.2rem;
-      cursor: pointer;
-      background-color: #ff7f7f;
-      border: none;
+    .game-container {
+      max-width: 600px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+    .choices {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .choices button {
+      font-size: 2rem;
+      padding: 1rem;
+      background: #ffffff20;
+      border: 2px solid white;
       color: white;
-      border-radius: 8px;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .choices button:hover {
+      background: #ffffff40;
+      transform: scale(1.1);
+    }
+
+    .result {
+      font-size: 1.3rem;
+      margin-top: 2rem;
+      font-weight: bold;
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    .play-again {
+      margin-top: 1rem;
+      background: white;
+      color: #8B0000;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
       transition: background 0.3s;
     }
 
-    .rps-buttons button:hover {
-      background-color: #e63e3e;
+    .play-again:hover {
+      background: #eee;
     }
 
-    .rps-result {
-      margin-top: 1.5rem;
-      font-size: 1.2rem;
-      font-weight: bold;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 500px) {
+      .choices {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
+  <div class="game-container">
     <h1>🎮 Rock Paper Scissors</h1>
-    <nav>
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="project1-basic-webpage.html">Project 1</a></li>
-        <li><a href="project2-rock-paper-scissors.html" aria-current="page">Project 2</a></li>
-        <li><a href="project3-flatland-advisor.html">Project 3</a></li>
-        <li><a href="project4-rss-reader.html">Project 4</a></li>
-      </ul>
-    </nav>
-  </header>
+    <p>Choose your weapon:</p>
 
-  <main>
-    <section class="rps-container">
-      <h2>Choose Your Move</h2>
-      <div class="rps-buttons">
-        <button onclick="play('rock')">✊ Rock</button>
-        <button onclick="play('paper')">✋ Paper</button>
-        <button onclick="play('scissors')">✌️ Scissors</button>
-      </div>
-      <div class="rps-result" id="result"></div>
-    </section>
-  </main>
+    <div class="choices">
+      <button onclick="play('rock')" title="Rock">✊</button>
+      <button onclick="play('paper')" title="Paper">✋</button>
+      <button onclick="play('scissors')" title="Scissors">✌️</button>
+    </
 
-  <footer>
-    <p>© 2025 Bippin Volthaly Appadu | Rock Paper Scissors Game</p>
-  </footer>
-
-  <script>
-    function play(playerChoice) {
-      const choices = ['rock', 'paper', 'scissors'];
-      const computerChoice = choices[Math.floor(Math.random() * 3)];
-      let resultText = `You chose ${playerChoice}. Computer chose ${computerChoice}. `;
-
-      if (playerChoice === computerChoice) {
-        resultText += "It's a draw!";
-      } else if (
-        (playerChoice === 'rock' && computerChoice === 'scissors') ||
-        (playerChoice === 'paper' && computerChoice === 'rock') ||
-        (playerChoice === 'scissors' && computerChoice === 'paper')
-      ) {
-        resultText += "You win! 🎉";
-      } else {
-        resultText += "You lose 😢";
-      }
-
-      document.getElementById("result").textContent = resultText;
-    }
-  </script>
-</body>
-</html>
