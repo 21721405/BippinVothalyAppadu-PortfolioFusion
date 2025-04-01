@@ -6,14 +6,46 @@
   <title>Rock Paper Scissors</title>
   <link rel="stylesheet" href="../css/style.css" />
   <style>
-    .rps-container {
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
       text-align: center;
+    }
+
+    header, footer {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .rps-container {
       margin-top: 2rem;
     }
 
-    .rps-buttons button {
+    .rps-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .rps-buttons button, .reset-btn {
       padding: 1rem 2rem;
-      margin: 0.5rem;
       font-size: 1.2rem;
       cursor: pointer;
       background-color: #ff7f7f;
@@ -23,14 +55,19 @@
       transition: background 0.3s;
     }
 
-    .rps-buttons button:hover {
+    .rps-buttons button:hover, .reset-btn:hover {
       background-color: #e63e3e;
     }
 
-    .rps-result {
-      margin-top: 1.5rem;
+    .rps-result, .rps-score, .rps-choices {
+      margin-top: 1rem;
       font-size: 1.2rem;
       font-weight: bold;
+    }
+
+    .reset-btn {
+      margin-top: 1.5rem;
+      background-color: #888;
     }
   </style>
 </head>
@@ -52,11 +89,14 @@
     <section class="rps-container">
       <h2>Choose Your Move</h2>
       <div class="rps-buttons">
-        <button onclick="play('rock')">✊ Rock</button>
-        <button onclick="play('paper')">✋ Paper</button>
-        <button onclick="play('scissors')">✌️ Scissors</button>
+        <button aria-label="Choose Rock" onclick="play('rock')">✊ Rock</button>
+        <button aria-label="Choose Paper" onclick="play('paper')">✋ Paper</button>
+        <button aria-label="Choose Scissors" onclick="play('scissors')">✌️ Scissors</button>
       </div>
+      <div class="rps-choices" id="choices"></div>
       <div class="rps-result" id="result"></div>
+      <div class="rps-score" id="score">Player: 0 | Computer: 0</div>
+      <button class="reset-btn" onclick="resetGame()">🔄 Reset</button>
     </section>
   </main>
 
@@ -65,26 +105,51 @@
   </footer>
 
   <script>
+    let playerScore = 0;
+    let computerScore = 0;
+
+    const emojiMap = {
+      rock: "✊",
+      paper: "✋",
+      scissors: "✌️"
+    };
+
     function play(playerChoice) {
       const choices = ['rock', 'paper', 'scissors'];
       const computerChoice = choices[Math.floor(Math.random() * 3)];
-      let resultText = `You chose ${playerChoice}. Computer chose ${computerChoice}. `;
+
+      // Show emoji choices
+      document.getElementById("choices").innerHTML = `You: ${emojiMap[playerChoice]} &nbsp;&nbsp; vs &nbsp;&nbsp; Computer: ${emojiMap[computerChoice]}`;
+
+      let resultText = "";
 
       if (playerChoice === computerChoice) {
-        resultText += "It's a draw!";
+        resultText = "It's a draw!";
       } else if (
         (playerChoice === 'rock' && computerChoice === 'scissors') ||
         (playerChoice === 'paper' && computerChoice === 'rock') ||
         (playerChoice === 'scissors' && computerChoice === 'paper')
       ) {
-        resultText += "You win! 🎉";
+        resultText = "You win! 🎉";
+        playerScore++;
       } else {
-        resultText += "You lose 😢";
+        resultText = "You lose 😢";
+        computerScore++;
       }
 
       document.getElementById("result").textContent = resultText;
+      document.getElementById("score").textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
+    }
+
+    function resetGame() {
+      playerScore = 0;
+      computerScore = 0;
+      document.getElementById("result").textContent = "";
+      document.getElementById("score").textContent = "Player: 0 | Computer: 0";
+      document.getElementById("choices").innerHTML = "";
     }
   </script>
 </body>
 </html>
+
 
