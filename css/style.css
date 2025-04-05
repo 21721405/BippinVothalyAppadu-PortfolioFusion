@@ -35,3 +35,37 @@ nav a, .socials a {
   height: 20px;
   vertical-align: middle;
 }
+
+.hero, .portfolio {
+  background-color: #ffffff;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 4rem 2rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.hero .left, .hero .right {
+  width: 100%;
+  max-width: 300px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.center-img img {
+  width: 250px;
+  border-radius: 50%;
+  margin: 2rem 0;
+}
