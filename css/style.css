@@ -69,3 +69,28 @@ nav a, .socials a {
   border-radius: 50%;
   margin: 2rem 0;
 }
+
+.portfolio {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.portfolio h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.projects {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.project {
+  background: white;
+  padding: 1rem;
+  width: 280px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
