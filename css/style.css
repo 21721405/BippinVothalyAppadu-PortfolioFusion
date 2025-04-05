@@ -10,3 +10,28 @@ body {
   background-color: #f4f4f4; 
 }
 
+header {
+  background: #111;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+nav a, .socials a {
+  color: white;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.socials a img {
+  height: 20px;
+  vertical-align: middle;
+}
