@@ -61,12 +61,46 @@ nav a, .socials a {
   align-items: center;
   padding: 4rem 2rem;
   flex-wrap: wrap;
-  text-align: center;
+  text-align: left;
+  background-color: #ffffff
 }
 
-.hero .left, .hero .right {
-  width: 100%;
-  max-width: 300px;
+.hero .left{
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
+}
+
+.hero .right-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 250px;
+}
+
+.hero .right-img img {
+  width: 320px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.learn-more-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #191970;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.learn-more-btn:hover {
+  background-color: #333399;
 }
 
 .hero h1 {
@@ -79,11 +113,6 @@ nav a, .socials a {
   color: #555;
 }
 
-.center-img img {
-  width: 320px;
-  border-radius: 50%;
-  margin: 2rem 0;
-}
 
 .portfolio {
   text-align: center;
