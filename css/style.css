@@ -285,6 +285,21 @@ footer {
   margin-bottom: 10px;
 }
 
+.scoreboard-full {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+}
+
+.score-left,
+.score-right {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
 
 
 .game-footer {

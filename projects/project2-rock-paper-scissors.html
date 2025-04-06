@@ -3,22 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Project Portfolio</title>  
+  <title>Rock Paper Scissors</title>  
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
 
+  <!-- Header -->
   <header>
     <div class="logo">
       <img src="../images/bva.jpg" alt="BVA Logo" />
     </div>
     <nav>
       <a href="../index.html">HOME</a>
-      <a href="projects/project1-basic-webpage.html">ABOUT</a>
-      <a href="projects/project2-rock-paper-scissors.html">RPS</a>
-      <a href="projects/project3-flatland-advisor.html">FBA</a>
-      <a href="projects/project4-rss-reader.html">RSS READER</a>
+      <a href="project1-basic-webpage.html">ABOUT</a>
+      <a href="project2-rock-paper-scissors.html">RPS</a>
+      <a href="project3-flatland-advisor.html">FBA</a>
+      <a href="project4-rss-reader.html">RSS READER</a>
     </nav>
     <div class="socials">
       <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733579.png" alt="Twitter" /></a>
@@ -28,51 +29,60 @@
     </div>
   </header>
 
+  <!-- Game Section -->
   <section class="game-section">
     <div class="game-container">
       <div class="game-header">
         <h2>Rock Paper Scissors</h2>
-        <p class="subtext">Your Choice &nbsp; <strong>vs</strong> &nbsp; Computer's Choice</p>
+        <p class="subtext">Choose your move below</p>
       </div>
-  
-      <div class="game-content">
-        <div class="score player-score">
-          <p>PLAYER</p>
-          <p id="playerScore">0</p>
+
+      <!-- Choice Buttons -->
+      <div class="choices-center">
+        <div class="choice rock" data-choice="rock">
+          <div class="choice-emoji">🪨</div>
+          <p>Rock</p>
         </div>
-  
-        <div class="choices-center">
-          <div class="choice rock">
-            <div class="choice-emoji">🪨</div>
-            <p>Rock</p>
-          </div>
-        
-          <div class="choice paper">
-            <div class="choice-emoji">📄</div>
-            <p>Paper</p>
-          </div>
-        
-          <div class="choice scissors">
-            <div class="choice-emoji">✂️</div>
-            <p>Scissors</p>
-          </div>
+
+        <div class="choice paper" data-choice="paper">
+          <div class="choice-emoji">📄</div>
+          <p>Paper</p>
         </div>
-  
-        <div class="score computer-score">
-          <p>COMPUTER</p>
-          <p id="computerScore">0</p>
+
+        <div class="choice scissors" data-choice="scissors">
+          <div class="choice-emoji">✂️</div>
+          <p>Scissors</p>
         </div>
       </div>
-  
+
+      <!-- Result Display -->
+      <div class="choice-display">
+        <p>You chose: <span id="playerChoiceIcon">❔</span></p>
+        <p>Computer chose: <span id="computerChoiceIcon">❔</span></p>
+      </div>
+
+      <!-- Score + Result -->
       <div class="game-footer">
         <p id="gameResult">Game Result</p>
+      
+        <div class="scoreboard-full">
+          <div class="score-left">
+            <p>Computer: <span id="computerScore">0</span></p>
+          </div>
+          <div class="score-right">
+            <p>Player: <span id="playerScore">0</span></p>
+          </div>
+        </div>
+      
         <div class="reset-button">
           <button id="resetGame">🔄</button>
         </div>
       </div>
+      
     </div>
   </section>
 
+  <!-- Info Section -->
   <section class="info-section">
     <div class="about">
       <h2>About</h2>
@@ -100,10 +110,15 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>© 2025 Bippin Volthaly Appadu | Built with HTML, CSS, JS & AI 💡</p>
   </footer>
-          
+
+  <!-- JS -->
+  <script src="../js/script.js"></script>
 </body>
+</html>
+
 </html>
 
