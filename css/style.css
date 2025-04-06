@@ -79,8 +79,9 @@ nav a, .socials a {
 }
 
 .hero .right-img img {
-  width: 320px;
-  height: auto;
+  width: 100px;
+  max-width: 280px;
+  height: 100px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
