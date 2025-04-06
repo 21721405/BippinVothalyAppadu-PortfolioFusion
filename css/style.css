@@ -109,36 +109,77 @@ footer {
 
 .portfolio {
   text-align: center;
-  padding: 1rem 1rem;
+  padding: -1rem -1rem;
   margin-top: -1rem;
 }
 
 .portfolio h2 {
   font-size: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .projects {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
   flex-wrap: wrap;
+  justify-content: center; /* Center items in the row */
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  background-color: #111;
+  max-width: 1200px;
+  margin: 0 auto; /* Center the whole section */
 }
 
-.project {
-  background: white;
-  padding: 1rem;
+.project-card {
+  background-color: #1e1e2f;
+  color: white;
   width: 280px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  border: 2px solid #ccc;
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 2px solid transparent;
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
-.project:hover {
-  border-color: #666;
-  transform: scale(1.03);
-  transition: all 0.3s ease;
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: #444;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
+
+.project-card .project-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.view-btn {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #191970;
+  color: #000;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.view-btn:hover {
+  background-color: #1e1e1e;
+}
+
 
 /* Responsive for index */
 @media (max-width: 768px) {
