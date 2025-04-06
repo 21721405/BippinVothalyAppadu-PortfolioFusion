@@ -26,6 +26,19 @@ header {
   object-fit: cover;  /* Keeps it nicely cropped inside the circle */
 }
 
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
 nav a, .socials a {
   color: white;
   margin-left: 1.5rem;
