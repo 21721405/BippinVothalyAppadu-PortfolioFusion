@@ -26,10 +26,10 @@ header {
   object-fit: cover;  /* Keeps it nicely cropped inside the circle */
 }
 
-nav {
+nav a {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
