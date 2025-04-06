@@ -26,7 +26,7 @@ header {
   object-fit: cover;  /* Keeps it nicely cropped inside the circle */
 }
 
-nav a {
+nav {
   display: flex;
   justify-content: center;
   gap: 1rem;
