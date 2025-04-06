@@ -11,9 +11,9 @@ body {
 }
 
 header {
-  background: #191970; /* Midnight blue */
+  background: #191970; 
   color: white;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -105,11 +105,11 @@ nav a, .socials a {
 }
 
 footer {
-  background: #191970; /* Midnight blue */
+  background: #191970; 
   color: white;
   text-align: center;
-  padding: 2rem;
-  font-size: 1rem;
+  padding: 1rem;
+  font-size: 0.9rem;
 }
 @media (max-width: 768px) {
   .hero {
