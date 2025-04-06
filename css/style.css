@@ -11,7 +11,7 @@ body {
 }
 
 header {
-  background: #111;
+  background: #222; /* same as footer */
   color: white;
   padding: 1rem 2rem;
   display: flex;
@@ -25,7 +25,7 @@ header {
 }
 
 nav a, .socials a {
-  color: #333;
+  color: white;
   margin-left: 1.5rem;
   text-decoration: none;
   font-size: 0.95rem;
