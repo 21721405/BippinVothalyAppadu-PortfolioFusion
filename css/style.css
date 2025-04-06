@@ -93,6 +93,13 @@ nav a, .socials a {
   width: 280px;
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
   border-radius: 10px;
+  border: 2px solid #ccc;
+}
+
+.project:hover {
+  border-color: #666;
+  transform: scale(1.03);
+  transition: all 0.3s ease;
 }
 
 footer {
