@@ -7,11 +7,12 @@
 body {
   font-family: 'Montserrat', sans-serif;
   color: #333;
-  background-color: #f4f4f4; 
+  background-color: #f4f4f4;
 }
 
+/* ========== HEADER (SHARED) ========== */
 header {
-  background: #191970; 
+  background: #191970;
   color: white;
   padding: 0.5rem 0.5rem;
   display: flex;
@@ -21,9 +22,9 @@ header {
 
 .logo img {
   height: 40px;
-  width: 40px; /* Set width equal to height */
-  border-radius: 50%; /* This makes it circular */
-  object-fit: cover;  /* Keeps it nicely cropped inside the circle */
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 nav {
@@ -33,16 +34,11 @@ nav {
   flex-wrap: wrap;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-}
-
 nav a, .socials a {
   color: white;
   margin-left: 1.5rem;
   text-decoration: none;
+  font-weight: 600;
   font-size: 0.95rem;
 }
 
@@ -51,6 +47,16 @@ nav a, .socials a {
   vertical-align: middle;
 }
 
+/* ========== FOOTER (SHARED) ========== */
+footer {
+  background: #191970;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ========== INDEX.HTML SPECIFIC ========== */
 .hero, .portfolio {
   background-color: #ffffff;
 }
@@ -83,7 +89,7 @@ nav a, .socials a {
   display: inline-block;
   margin-top: 10px;
   padding: 10px 20px;
-  background-color: #191970; /* or any color you like */
+  background-color: #191970;
   color: white;
   text-decoration: none;
   border-radius: 8px;
@@ -104,7 +110,7 @@ nav a, .socials a {
 .portfolio {
   text-align: center;
   padding: 1rem 1rem;
-  margin-top:-1rem ;
+  margin-top: -1rem;
 }
 
 .portfolio h2 {
@@ -123,7 +129,7 @@ nav a, .socials a {
   background: white;
   padding: 1rem;
   width: 280px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   border: 2px solid #ccc;
 }
@@ -134,15 +140,14 @@ nav a, .socials a {
   transition: all 0.3s ease;
 }
 
-footer {
-  background: #191970; 
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-}
+/* Responsive for index */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
   }
 }
+
+
+
+
+

@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Project Portfolio</title>  
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
 
   <header>
     <div class="logo">
-     <img src="images/bva.jpg" alt="BVA Logo" />
+      <img src="../images/bva.jpg" alt="BVA Logo" />
     </div>
     <nav>
-      <a href="index.html">HOME</a>
+      <a href="../index.html">HOME</a>
       <a href="projects/project1-basic-webpage.html">ABOUT</a>
       <a href="projects/project2-rock-paper-scissors.html">RPS</a>
       <a href="projects/project3-flatland-advisor.html">FBA</a>
@@ -27,5 +27,51 @@
       <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/2111/2111421.png" alt="Instagram" /></a>
     </div>
   </header>
+
+  <section class="game-section">
+    <div class="game-container">
+      <div class="game-header">
+        <h2>Rock Paper Scissors</h2>
+        <p class="subtext">Your Choice &nbsp; <strong>vs</strong> &nbsp; Computer's Choice</p>
+      </div>
+  
+      <div class="game-content">
+        <div class="score player-score">
+          <p>PLAYER</p>
+          <p id="playerScore">0</p>
+        </div>
+  
+        <div class="choices-center">
+          <div class="choice" id="playerChoiceBox">
+            <div class="choice-emoji" id="playerChoiceIcon">🪨</div>
+            <p>Rock</p>
+          </div>
+  
+          <div class="choice">
+            <div class="choice-emoji">📄</div>
+            <p>Paper</p>
+          </div>
+  
+          <div class="choice" id="computerChoiceBox">
+            <div class="choice-emoji" id="computerChoiceIcon">✂️</div>
+            <p>Scissors</p>
+          </div>
+        </div>
+  
+        <div class="score computer-score">
+          <p>COMPUTER</p>
+          <p id="computerScore">0</p>
+        </div>
+      </div>
+  
+      <div class="game-footer">
+        <p id="gameResult">Game Result</p>
+        <div class="reset-button">
+          <button id="resetGame">🔄</button>
+        </div>
+      </div>
+    </div>
+  </section>
+          
 
 
