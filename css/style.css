@@ -74,7 +74,8 @@ nav a, .socials a {
 
 .portfolio {
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 2rem 2rem;
+  margin-top:-1rem ;
 }
 
 .portfolio h2 {
