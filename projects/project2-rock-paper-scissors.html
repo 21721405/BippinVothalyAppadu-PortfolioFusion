@@ -3,185 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rock Paper Scissors - Against Computer</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #111;
-      color: #fff;
-      line-height: 1.6;
-    }
-
-    header {
-      padding: 3rem 1rem;
-      background: linear-gradient(to right, #3a7bd5, #00d2ff);
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    header .icons {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .section {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    h2 {
-      color: #00d2ff;
-      margin-bottom: 1rem;
-    }
-
-    .rps-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin: 1rem 0;
-    }
-
-    .rps-buttons button {
-      font-size: 1.5rem;
-      padding: 1rem 2rem;
-      background-color: #ff7f7f;
-      border: none;
-      color: white;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .rps-buttons button:hover {
-      background-color: #e63e3e;
-    }
-
-    .result-box {
-      margin-top: 1rem;
-      text-align: center;
-      font-size: 1.3rem;
-    }
-
-    .score {
-      font-weight: bold;
-      margin-top: 0.5rem;
-    }
-
-    ul {
-      margin-left: 1.2rem;
-    }
-
-    footer {
-      background-color: #222;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
-  </style>
+  <title>My Project Portfolio</title>  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
   <header>
-
-
-    <div class="icons">🪨 📄 ✂️</div>
-    <h1>ROCK PAPER SCISSORS</h1>
-    <p><strong>online (vs Computer)</strong></p>
+    <div class="logo">
+     <img src="images/bva.jpg" alt="BVA Logo" />
+    </div>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="projects/project1-basic-webpage.html">ABOUT</a>
+      <a href="projects/project2-rock-paper-scissors.html">RPS</a>
+      <a href="projects/project3-flatland-advisor.html">FBA</a>
+      <a href="projects/project4-rss-reader.html">RSS READER</a>
+    </nav>
+    <div class="socials">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733579.png" alt="Twitter" /></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/174/174857.png" alt="LinkedIn" /></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png" alt="Facebook" /></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/2111/2111421.png" alt="Instagram" /></a>
+    </div>
   </header>
-
-  <div class="section">
-    <h2>About</h2>
-    <p>Rock Paper Scissors is a fun and simple game we all know from childhood. This version lets you play instantly against the computer — no need to wait for a friend!</p>
-  </div>
-
-  <div class="section">
-    <h2>How to Play</h2>
-    <p>Click on one of the buttons below to make your move. The computer will randomly choose its move. Can you beat it?</p>
-  </div>
-
-  <div class="section">
-    <h2>Play Now</h2>
-    <div class="rps-buttons">
-      <button onclick="play('rock')">🪨 Rock</button>
-      <button onclick="play('paper')">📄 Paper</button>
-      <button onclick="play('scissors')">✂️ Scissors</button>
-    </div>
-    <div class="result-box" id="resultBox">
-      <div id="choices"></div>
-      <div id="result"></div>
-      <div class="score" id="score">Player: 0 | Computer: 0</div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>What are the Rules?</h2>
-    <ul>
-      <li>If you choose Rock, you win against Scissors but lose against Paper.</li>
-      <li>If you choose Scissors, you win against Paper but lose against Rock.</li>
-      <li>If you choose Paper, you win against Rock but lose against Scissors.</li>
-    </ul>
-    <p>The game can go as long as you want. Play again as many times as you like!</p>
-  </div>
-
-  <div class="section">
-    <h2>Interesting Facts</h2>
-    <ol>
-      <li>The game originated in China in the 17th century, not Europe or America.</li>
-      <li>Stats say people tend to choose Scissors first, then Rock.</li>
-      <li>A robot in Japan can win every time by predicting your muscle movements!</li>
-    </ol>
-  </div>
-
-  <footer>
-    © 2025 Bippin Volthaly Appadu | Rock Paper Scissors Game
-  </footer>
-
-  <script>
-    let playerScore = 0;
-    let computerScore = 0;
-
-    const emojiMap = {
-      rock: "🪨",
-      paper: "📄",
-      scissors: "✂️"
-    };
-
-    function play(playerChoice) {
-      const choices = ['rock', 'paper', 'scissors'];
-      const computerChoice = choices[Math.floor(Math.random() * 3)];
-
-      const playerEmoji = emojiMap[playerChoice];
-      const computerEmoji = emojiMap[computerChoice];
-
-      document.getElementById("choices").innerHTML = `You: ${playerEmoji} vs Computer: ${computerEmoji}`;
-
-      let result = "";
-
-      if (playerChoice === computerChoice) {
-        result = "It's a draw!";
-      } else if (
-        (playerChoice === 'rock' && computerChoice === 'scissors') ||
-        (playerChoice === 'paper' && computerChoice === 'rock') ||
-        (playerChoice === 'scissors' && computerChoice === 'paper')
-      ) {
-        result = "You win! 🎉";
-        playerScore++;
-      } else {
-        result = "You lose 😢";
-        computerScore++;
-      }
-
-      document.getElementById("result").textContent = result;
-      document.getElementById("score").textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
-    }
-  </script>
-</body>
-</html>
 
 
