@@ -19,9 +19,11 @@ header {
   align-items: center;
 }
 
-.logo {
-  font-size: 2rem;
-  font-weight: bold;
+.logo img {
+  height: 50px;
+  width: 50px; /* Set width equal to height */
+  border-radius: 50%; /* This makes it circular */
+  object-fit: cover;  /* Keeps it nicely cropped inside the circle */
 }
 
 nav a, .socials a {
