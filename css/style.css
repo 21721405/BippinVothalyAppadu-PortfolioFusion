@@ -190,7 +190,7 @@ footer {
 
 /* ========== PROJECT 2: RPS GAME PAGE ========== */
 .game-section {
-  background-color: #1e1e1e;
+  background-color: #000000;
   padding: 40px 20px;
   text-align: center;
 }
@@ -245,9 +245,33 @@ footer {
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease;
   padding: 10px 20px;
   border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+}
+
+.choice.rock {
+  background-color: #e74c3c; 
+}
+
+.choice.paper {
+  background-color: #f1c40f; 
+  color: black;
+}
+
+.choice.scissors {
+  background-color: #2ecc71; 
+}
+
+.choice:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.choice-emoji {
+  font-size: 60px;
+  margin-bottom: 10px;
 }
 
 .choice:hover {
@@ -261,17 +285,7 @@ footer {
   margin-bottom: 10px;
 }
 
-.choice.rock:hover {
-  background-color: #e74c3c; /* red */
-}
 
-.choice.paper:hover {
-  background-color: #f1c40f; /* yellow */
-}
-
-.choice.scissors:hover {
-  background-color: #2ecc71; /* green */
-}
 
 .game-footer {
   margin-top: 30px;
