@@ -480,5 +480,19 @@ footer {
   margin-top: 2rem;
 }
 
+.read-more-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #191970; /* Midnight Blue */
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.read-more-link:hover {
+  color: #00008b; /* Even darker blue on hover */
+  text-decoration: underline;
+}
+
 
 

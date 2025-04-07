@@ -121,6 +121,7 @@
               ${article.author ? `<span class="author">${article.author}</span>` : ""}
               <span>• ${new Date(article.pubDate || article.published_at).toLocaleDateString()}</span>
             </div>
+            <a href="${article.url || article.link}" target="_blank" class="read-more-link">Read More →</a>
           </div>
         `;
         feed.appendChild(card);
