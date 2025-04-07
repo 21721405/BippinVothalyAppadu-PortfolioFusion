@@ -109,20 +109,18 @@
       nextBatch.forEach(article => {
         const card = document.createElement("a");
         card.className = "rss-card";
-        card.href = article.url || article.link;
-        card.target = "_blank";
-  
+        
         card.innerHTML = `
           <img src="${article.cover_image || article.thumbnail || 'https://via.placeholder.com/400x180?text=No+Image'}" alt="Cover">
           <div class="rss-content">
             <h3>${article.title}</h3>
             <p>${article.description || article.contentSnippet || 'No summary available.'}</p>
             <div class="rss-meta">
-              ${article.author ? `<span class="author">${article.author}</span>` : ""}
-              <span>• ${new Date(article.pubDate || article.published_at).toLocaleDateString()}</span>
-            </div>
-            <a href="${article.url || article.link}" target="_blank" class="read-more-link">Read More →</a>
+             ${article.author ? `<span class="author">${article.author}</span>` : ""}
+             <span>• ${new Date(article.pubDate || article.published_at).toLocaleDateString()}</span>
           </div>
+          <a href="${article.url || article.link}" target="_blank" class="read-more-link">Read More →</a>
+         </div>
         `;
         feed.appendChild(card);
       });
