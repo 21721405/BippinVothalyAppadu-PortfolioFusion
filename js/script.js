@@ -95,7 +95,7 @@
     const feedUrls = {
       devto: "https://dev.to/api/articles",
       bbc: "https://feeds.bbci.co.uk/news/rss.xml",
-      mozilla: "https://blog.mozilla.org/feed/"
+      mozilla: "https://hacks.mozilla.org/feed/"
     };
   
     let page = 1;
