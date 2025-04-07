@@ -14,9 +14,13 @@ const gameResultText = document.getElementById("gameResult");
 const playerScoreText = document.getElementById("playerScore");
 const computerScoreText = document.getElementById("computerScore");
 const resetBtn = document.getElementById("resetGame");
+const clickSound = document.getElementById("clickSound");
+
 
 document.querySelectorAll(".choice").forEach(choice => {
   choice.addEventListener("click", () => {
+    clickSound.currentTime = 0; // Rewind so it can play again fast
+    clickSound.play();
     const playerChoice = choice.dataset.choice;
     const computerChoice = getComputerChoice();
 
