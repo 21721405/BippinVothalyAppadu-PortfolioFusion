@@ -89,70 +89,120 @@
     const feed = document.getElementById("feed");
     const tagSelect = document.getElementById("tagSelect");
     const authorSelect = document.getElementById("authorSelect");
+    const feedSourceSelect = document.getElementById("feedSource");
   
-    if (feed && tagSelect && authorSelect) {
-      let page = 1;
+    const apiUrl = "https://api.rss2json.com/v1/api.json?rss_url=";
+    const feedUrls = {
+      devto: "https://dev.to/api/articles",
+      bbc: "https://feeds.bbci.co.uk/news/rss.xml",
+      mozilla: "https://blog.mozilla.org/feed/"
+    };
   
-      function loadArticles(reset = false) {
-        if (reset) {
-          page = 1;
-          feed.innerHTML = "Loading articles...";
-        }
+    let page = 1;
+    let rssCache = []; // cache for RSS sources
+    const batchSize = 6;
+    let currentRssIndex = 0;
   
-        const tag = tagSelect.value;
-        const author = authorSelect.value;
+    function renderArticles(articles, isDevto = false) {
+      const nextBatch = isDevto ? articles : articles.slice(currentRssIndex, currentRssIndex + batchSize);
   
-        let url = `https://dev.to/api/articles?per_page=6&page=${page}`;
+      nextBatch.forEach(article => {
+        const card = document.createElement("a");
+        card.className = "rss-card";
+        card.href = article.url || article.link;
+        card.target = "_blank";
+  
+        card.innerHTML = `
+          <img src="${article.cover_image || article.thumbnail || 'https://via.placeholder.com/400x180?text=No+Image'}" alt="Cover">
+          <div class="rss-content">
+            <h3>${article.title}</h3>
+            <p>${article.description || article.contentSnippet || 'No summary available.'}</p>
+            <div class="rss-meta">
+              ${article.author ? `<span class="author">${article.author}</span>` : ""}
+              <span>• ${new Date(article.pubDate || article.published_at).toLocaleDateString()}</span>
+            </div>
+          </div>
+        `;
+        feed.appendChild(card);
+      });
+  
+      if (!isDevto) currentRssIndex += batchSize;
+    }
+  
+    function loadArticles(reset = false) {
+      const source = feedSourceSelect.value;
+      const isDevto = source === "devto";
+      const tag = tagSelect.value;
+      const author = authorSelect.value;
+  
+      // Toggle Load More visibility
+      document.querySelector(".load-more").style.display = "block";
+  
+      if (reset) {
+        feed.innerHTML = "Loading articles...";
+        page = 1;
+        currentRssIndex = 0;
+        rssCache = [];
+      }
+  
+      if (isDevto) {
+        let url = `${feedUrls.devto}?per_page=6&page=${page}`;
         if (tag) url += `&tag=${tag}`;
         if (author) url += `&username=${author}`;
   
         fetch(url)
           .then(res => res.json())
-          .then(articles => {
+          .then(data => {
             if (reset) feed.innerHTML = "";
-  
-            if (!articles.length) {
-              feed.innerHTML = "<p>No articles found for this filter.</p>";
+            if (!data || !data.length) {
+              feed.innerHTML = "<p>No articles found.</p>";
               return;
             }
-  
-            articles.forEach(article => {
-              const card = document.createElement('a');
-              card.className = 'rss-card';
-              card.href = article.url;
-              card.target = '_blank';
-  
-              card.innerHTML = `
-                <img src="${article.cover_image || 'https://via.placeholder.com/400x180?text=No+Image'}" alt="Cover">
-                <div class="rss-content">
-                  <h3>${article.title}</h3>
-                  <p>${article.description || 'No summary available.'}</p>
-                  <div class="rss-meta">
-                    <img src="${article.user.profile_image}" alt="${article.user.name}">
-                    <span class="author">${article.user.name}</span>
-                    <span>• ${new Date(article.published_at).toLocaleDateString()}</span>
-                  </div>
-                </div>
-              `;
-              feed.appendChild(card);
-            });
+            renderArticles(data, true);
           })
           .catch(() => {
-            feed.innerHTML = "<p>❌ Could not load articles. Try again later.</p>";
+            feed.innerHTML = "<p>❌ Could not load Dev.to articles.</p>";
+          });
+  
+      } else {
+        if (rssCache.length && !reset) {
+          renderArticles(rssCache);
+          return;
+        }
+  
+        fetch(`${apiUrl}${feedUrls[source]}`)
+          .then(res => res.json())
+          .then(data => {
+            if (reset) feed.innerHTML = "";
+            if (!data.items || !data.items.length) {
+              feed.innerHTML = "<p>No articles found.</p>";
+              return;
+            }
+            rssCache = data.items;
+            renderArticles(rssCache);
+          })
+          .catch(() => {
+            feed.innerHTML = "<p>❌ Could not load RSS feed.</p>";
           });
       }
+    }
   
-      function loadMore() {
+    function loadMore() {
+      const source = feedSourceSelect.value;
+      if (source === "devto") {
         page++;
         loadArticles(false);
+      } else if (rssCache.length > currentRssIndex) {
+        renderArticles(rssCache);
       }
-  
-      document.querySelector(".controls button")?.addEventListener("click", () => loadArticles(true));
-      document.querySelector(".load-more button")?.addEventListener("click", () => loadMore());
-  
-      // Initial load
-      loadArticles();
     }
+  
+    document.querySelector(".controls button")?.addEventListener("click", () => loadArticles(true));
+    document.querySelector(".load-more button")?.addEventListener("click", () => loadMore());
+  
+    loadArticles(true);
   })();
+  
+  
   
 
