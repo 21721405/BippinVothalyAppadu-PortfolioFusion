@@ -485,13 +485,13 @@ footer {
   margin-top: 0.75rem;
   font-size: 1rem;
   font-weight: 700;
-  color: #191970; 
+  color: #4169E1; 
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .read-more-link:hover {
-  color: #00008b; 
+  color: #1E3A8A; 
   text-decoration: underline;
 }
 
