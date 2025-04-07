@@ -379,6 +379,106 @@ footer {
   padding-left: 1.5rem;
 }
 
+/* ========== PROJECT 4: RSS READER ========== */
+.rss-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+  background-color: #121212;
+  color: white;
+}
+
+.rss-wrapper h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.rss-wrapper .controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.rss-wrapper select,
+.rss-wrapper button {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  background: white;
+  color: #8B0000;
+  font-weight: bold;
+}
+
+.rss-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.rss-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+
+.rss-card:hover {
+  transform: translateY(-5px);
+}
+
+.rss-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.rss-content {
+  padding: 1rem;
+}
+
+.rss-content h3 {
+  font-size: 1.1rem;
+  color: #fff;
+  margin: 0 0 0.5rem;
+}
+
+.rss-content p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin: 0 0 1rem;
+}
+
+.rss-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.rss-meta img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.rss-meta span.author {
+  font-weight: bold;
+  color: #fff;
+}
+
+.load-more {
+  text-align: center;
+  margin-top: 2rem;
+}
 
 
 
