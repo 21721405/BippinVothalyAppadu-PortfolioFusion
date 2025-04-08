@@ -14,4 +14,13 @@ function makeRed() {
     const square = document.getElementById("square");
     if (square) square.style.backgroundColor = "gray";
   }
+
+  // Step 4: Refactored with parameterized function
+function changeColour(color) {
+    const square = document.getElementById("square");
+    if (square) {
+      square.style.backgroundColor = color;
+    }
+  }
+  
   
