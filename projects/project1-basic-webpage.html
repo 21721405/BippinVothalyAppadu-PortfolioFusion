@@ -2,43 +2,63 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About Me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 1: Responsive Feature Page</title>
+  <link rel="stylesheet" href="../css/project1-style.css">
 </head>
 <body>
-
   <header>
-    <h1>About Me</h1>
+    <div class="container">
+      <h1 class="logo">FusionWeb</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section>
-    <h2>Introduction</h2>
-    <p>Hello! My name is [Your Name]. I'm passionate about technology, creativity, and continuous learning. This page is a little glimpse into who I am and what I do.</p>
+  <section class="hero">
+    <div class="container">
+      <h2>Crafting Modern Experiences</h2>
+      <p>Using the power of HTML5 and CSS3 to build responsive, accessible, and stunning websites.</p>
+    </div>
   </section>
 
-  <section>
-    <h2>Education</h2>
-    <p>I am currently pursuing [Your Degree] at [Your University]. I enjoy subjects like web development, data analysis, and digital design.</p>
+  <section id="features" class="features">
+    <div class="container grid">
+      <div class="feature-card">
+        <h3>🚀 Fast Performance</h3>
+        <p>Our pages are optimized to load instantly and run smoothly across all devices.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📱 Mobile Responsive</h3>
+        <p>Fully responsive layouts that adapt beautifully from phones to desktops.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🎨 Customizable Design</h3>
+        <p>Flexible design systems to match your personal or business branding.</p>
+      </div>
+    </div>
   </section>
 
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li>HTML, CSS, JavaScript</li>
-      <li>Python & Data Analysis</li>
-      <li>UI/UX Design Basics</li>
-      <li>Version Control (Git)</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Hobbies</h2>
-    <p>Outside of academics and work, I enjoy music, gaming, photography, and exploring new technologies.</p>
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
   </section>
 
   <footer>
-    <p>Contact: your.email@example.com</p>
+    <p>&copy; 2025 Bippin Volthaly Appadu. All rights reserved.</p>
   </footer>
-
 </body>
 </html>
 
