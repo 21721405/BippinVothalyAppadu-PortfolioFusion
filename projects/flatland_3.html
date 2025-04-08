@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flatland – Step 3</title>
+  <link rel="stylesheet" href="../css/flatland-style.css" />
+</head>
+<body>
+
+  <main>
+    <h1>Step 3: Introducing Multiple Events</h1>
+    <p>
+      This step adds functions for click, hover, and mouse out, handled via HTML attributes but
+      defined in an external JavaScript file.
+    </p>
+
+    <div id="words">Hover over or click the square!</div>
+    <div id="square"
+         onclick="makeRed()"
+         onmouseover="makeGreen()"
+         onmouseout="makeGray()">
+    </div>
+  </main>
+
+  <script src="../js/flatland-script.js"></script>
+</body>
+</html>
