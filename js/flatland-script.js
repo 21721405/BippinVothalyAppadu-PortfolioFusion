@@ -6,15 +6,22 @@ function changeColour(color) {
     }
   }
   
-// ========== STEP 5: JS-only event handling ==========
-document.addEventListener("DOMContentLoaded", () => {
+  // ========== STEP 5 & 6: DOMContentLoaded Events ==========
+  document.addEventListener("DOMContentLoaded", () => {
     const square = document.getElementById("square");
-    if (!square) return;
+    const words = document.getElementById("words");
   
-    square.addEventListener("click", () => changeColour("red"));
-    square.addEventListener("mouseover", () => changeColour("green"));
-    square.addEventListener("mouseout", () => changeColour("gray"));
+    if (square) {
+      square.addEventListener("click", () => changeColour("red"));
+      square.addEventListener("mouseover", () => changeColour("green"));
+      square.addEventListener("mouseout", () => changeColour("gray"));
+    }
+  
+    if (words) {
+      words.textContent = "Welcome to Flatland! Interact with the square below 👇";
+    }
   });
+  
   
   
   
