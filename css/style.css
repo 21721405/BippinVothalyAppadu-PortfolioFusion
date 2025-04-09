@@ -114,8 +114,6 @@ footer {
   font-weight: 600;
 }
 
-
-
 /* About block: image + about side-by-side */
 .about-block {
   display: flex;
@@ -129,7 +127,6 @@ footer {
   text-align: left;
   margin-top: 4rem;
 }
-
 
 /* 🖼️ BIGGER Profile Picture */
 .profile-pic img {
@@ -145,7 +142,6 @@ footer {
   max-width: 700px;
   margin-top: -40px;  /* nudges it up slightly */
 }
-
 
 .about-me h2 {
   font-size: 2.6rem;
@@ -211,7 +207,10 @@ footer {
   font-size: 1.3rem;
 }
 
-
+.about-buttons .info-toggle.active {
+  background-color: #ffcc00;
+  color: #111;
+}
 
 /* Portfolio section */
 .portfolio {

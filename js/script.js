@@ -28,22 +28,26 @@ document.addEventListener("DOMContentLoaded", () => {
 // ========== INDEX HOMEPAGE ==========
 function showSection(id) {
     const allSections = document.querySelectorAll(".about-content");
+    const buttons = document.querySelectorAll(".info-toggle");
     const selected = document.getElementById(id);
   
     if (!selected) return;
   
     const isVisible = selected.style.display === "block";
   
-    // Hide all sections
-    allSections.forEach(section => {
-      section.style.display = "none";
-    });
+    // Hide all sections and remove active class from buttons
+    allSections.forEach(section => (section.style.display = "none"));
+    buttons.forEach(btn => btn.classList.remove("active"));
   
-    // Toggle the clicked one
+    // Toggle selected section and highlight button
     if (!isVisible) {
       selected.style.display = "block";
+  
+      // Highlight the correct button
+      document.querySelector(`button[onclick="showSection('${id}')"]`)?.classList.add("active");
     }
   }
+  
   
   
 // ========== ROCK PAPER SCISSORS GAME ==========
