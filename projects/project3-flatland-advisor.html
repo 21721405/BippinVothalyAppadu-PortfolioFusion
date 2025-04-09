@@ -98,72 +98,183 @@
     <!-- Reflection Questions -->
     <section class="flatland-reflections">
         <h2>🧠 Reflection & Step Questions</h2>
-  
+      
+        <!-- STEP 1 -->
         <div class="reflection-card">
           <h3>Step 1</h3>
           <ul>
-            <li>🔹 What static content is provided in this version?</li>
-            <li>🔹 How is the background colour applied using inline JavaScript?</li>
+            <li>
+              🔹 What static content is provided in this version?<br>
+              <button class="toggle-answer">Show Answer</button>
+              <div class="answer-content">
+                A header, a #words text element, and a red square styled inline with HTML.
+              </div>
+            </li>
+            <li>
+              🔹 How is the background colour applied using inline JavaScript?<br>
+              <button class="toggle-answer">Show Answer</button>
+              <div class="answer-content">
+                The background color is applied directly using the <code>style</code> attribute in the HTML.
+              </div>
+            </li>
           </ul>
         </div>
-  
+      
+        <!-- STEP 2 -->
         <div class="reflection-card">
           <h3>Step 2</h3>
           <ul>
-            <li>🔹 What is the effect of clicking the square in this version?</li>
-            <li>🔹 How does this method of handling events compare to later approaches?</li>
+            <li>
+              🔹 What is the effect of clicking the square in this version?<br>
+              <button class="toggle-answer">Show Answer</button>
+              <div class="answer-content">
+                Clicking the square changes its background color using an inline <code>onclick</code> event.
+              </div>
+            </li>
+            <li>
+              🔹 How does this method of handling events compare to later approaches?<br>
+              <button class="toggle-answer">Show Answer</button>
+              <div class="answer-content">
+                It mixes behavior and structure, which becomes harder to manage. Later steps use JS-only event handling.
+              </div>
+            </li>
           </ul>
         </div>
-  
+      
+        <!-- STEP 3 -->
         <div class="reflection-card">
           <h3>Step 3</h3>
           <ul>
-            <li>🔹 How does the square’s background colour change with different events?</li>
-            <li>🔹 Why might it be useful to define separate functions for these actions?</li>
+            <li>
+              🔹 How does the squares background colour change with different events?<br>
+              <button class="toggle-answer">Show Answer</button>
+              <div class="answer-content">
+                The square turns red on click, green on mouseover, and gray on mouseout using inline event attributes.
+              </div>
+            </li>
+            <li>
+              🔹 Why might it be useful to define separate functions for these actions?<br>
+              <button class="toggle-answer">Show Answer</button>
+              <div class="answer-content">
+                It keeps code modular and easier to debug or reuse, rather than duplicating logic inline.
+              </div>
+            </li>
           </ul>
         </div>
-  
+      
+        <!-- STEP 4 -->
         <div class="reflection-card">
           <h3>Step 4</h3>
           <ul>
-            <li>🔹 What are the advantages of consolidating the event handling logic into one function?</li>
-            <li>🔹 How does this approach promote code reusability and maintainability?</li>
+            <li>
+              🔹 What are the advantages of consolidating the event handling logic into one function?<br>
+              <button class="toggle-answer">Show Answer</button>
+              <div class="answer-content">
+                A single parameterized function reduces repetition and makes the code easier to maintain.
+              </div>
+            </li>
+            <li>
+              🔹 How does this approach promote code reusability and maintainability?<br>
+              <button class="toggle-answer">Show Answer</button>
+              <div class="answer-content">
+                You can use the same function for different events by passing different color values as parameters.
+              </div>
+            </li>
           </ul>
         </div>
-  
+      
+        <!-- STEP 5 -->
         <div class="reflection-card">
           <h3>Step 5</h3>
           <ul>
-            <li>🔹 What are the benefits of using <code>addEventListener</code> instead of inline HTML attributes?</li>
-            <li>🔹 How does this improve the separation of concerns between HTML and JavaScript?</li>
+            <li>
+              🔹 What are the benefits of using <code>addEventListener</code> instead of inline HTML attributes?<br>
+              <button class="toggle-answer">Show Answer</button>
+              <div class="answer-content">
+                It separates structure from behavior, follows modern best practices, and avoids cluttering HTML.
+              </div>
+            </li>
+            <li>
+              🔹 How does this improve the separation of concerns between HTML and JavaScript?<br>
+              <button class="toggle-answer">Show Answer</button>
+              <div class="answer-content">
+                HTML handles layout only, while JS manages interactions, improving readability and flexibility.
+              </div>
+            </li>
           </ul>
         </div>
-  
+      
+        <!-- STEP 6 -->
         <div class="reflection-card">
           <h3>Step 6</h3>
           <ul>
-            <li>🔹 What is the purpose of the <code>greeting()</code> function in this version?</li>
-            <li>🔹 How does dynamically inserting content into the DOM demonstrate separation of concerns?</li>
+            <li>
+              🔹 What is the purpose of the <code>greeting()</code> function in this version?<br>
+              <button class="toggle-answer">Show Answer</button>
+              <div class="answer-content">
+                To dynamically insert a welcome message into the page when it loads.
+              </div>
+            </li>
+            <li>
+              🔹 How does dynamically inserting content into the DOM demonstrate separation of concerns?<br>
+              <button class="toggle-answer">Show Answer</button>
+              <div class="answer-content">
+                It keeps content logic in JS and layout in HTML, reducing the need for hardcoded values.
+              </div>
+            </li>
           </ul>
         </div>
-  
+      
+        <!-- STEP 7 -->
         <div class="reflection-card">
           <h3>Step 7</h3>
           <ul>
-            <li>🔹 Why is it beneficial to remove inline event attributes?</li>
-            <li>🔹 How does this practice align with best practices for clean and maintainable code?</li>
+            <li>
+              🔹 Why is it beneficial to remove inline event attributes?<br>
+              <button class="toggle-answer">Show Answer</button>
+              <div class="answer-content">
+                It improves readability, prevents duplicated logic, and adheres to modern coding standards.
+              </div>
+            </li>
+            <li>
+              🔹 How does this practice align with best practices for clean and maintainable code?<br>
+              <button class="toggle-answer">Show Answer</button>
+              <div class="answer-content">
+                It helps separate responsibilities and enables better scalability of the codebase.
+              </div>
+            </li>
           </ul>
         </div>
-  
+      
+        <!-- STEP 8 -->
         <div class="reflection-card">
           <h3>Step 8</h3>
           <ul>
-            <li>🔹 How does the external <code>script.js</code> file improve structure?</li>
-            <li>🔹 What role does the buzzword generator play?</li>
-            <li>🔹 How does this demonstrate a well-structured, dynamic web app?</li>
+            <li>
+              🔹 How does the external <code>script.js</code> file improve structure?<br>
+              <button class="toggle-answer">Show Answer</button>
+              <div class="answer-content">
+                It centralizes all logic, keeps HTML clean, and makes it easier to debug and reuse scripts.
+              </div>
+            </li>
+            <li>
+              🔹 What role does the buzzword generator play?<br>
+              <button class="toggle-answer">Show Answer</button>
+              <div class="answer-content">
+                It adds a dynamic element and simulates real-time user interaction, enhancing interactivity.
+              </div>
+            </li>
+            <li>
+              🔹 How does this demonstrate a well-structured, dynamic web app?<br>
+              <button class="toggle-answer">Show Answer</button>
+              <div class="answer-content">
+                By integrating dynamic content, external logic, and interactive UI, it reflects a complete front-end development workflow.
+              </div>
+            </li>
           </ul>
         </div>
       </section>
+      
   
   </main>
 
@@ -171,7 +282,7 @@
   <footer>
     <p>© 2025 Bippin Volthaly Appadu | Built with HTML, CSS, JS & AI 💡</p>
   </footer>
-
+<script src="../js/script.js"></script>
 </body>
 </html>
 

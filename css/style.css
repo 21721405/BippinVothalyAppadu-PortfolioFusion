@@ -631,8 +631,8 @@ footer {
 }
 
 .flatland-reflections {
-  max-width: 900px;
-  margin: 60px auto;
+  max-width: 1000px;
+  margin: 80px auto 100px;
   padding: 0 20px;
 }
 
@@ -646,26 +646,55 @@ footer {
 .reflection-card {
   background-color: #1a1a2e;
   border: 2px solid #2f2f4f;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
+  border-radius: 12px;
+  padding: 30px 40px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .reflection-card h3 {
   color: #ffffff;
-  font-size: 1.3rem;
-  margin-bottom: 10px;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
 }
 
 .reflection-card ul {
   padding-left: 20px;
+  list-style-type: disc;
 }
 
 .reflection-card li {
   color: #cccccc;
-  margin-bottom: 8px;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
 }
+
+.toggle-answer {
+  margin-top: 6px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  background-color: #2f2f4f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.toggle-answer:hover {
+  background-color: #3f3f6f;
+}
+
+.answer-content {
+  margin-top: 8px;
+  padding-left: 10px;
+  color: #a0e6ff;
+  font-style: italic;
+  font-size: 0.95rem;
+  display: none;
+}
+
 
 
 

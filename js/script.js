@@ -99,7 +99,7 @@
     };
   
     let page = 1;
-    let rssCache = []; 
+    let rssCache = [];
     const batchSize = 6;
     let currentRssIndex = 0;
   
@@ -109,18 +109,18 @@
       nextBatch.forEach(article => {
         const card = document.createElement("a");
         card.className = "rss-card";
-        
+  
         card.innerHTML = `
           <img src="${article.cover_image || article.thumbnail || 'https://via.placeholder.com/400x180?text=No+Image'}" alt="Cover">
           <div class="rss-content">
             <h3>${article.title}</h3>
             <p>${article.description || article.contentSnippet || 'No summary available.'}</p>
             <div class="rss-meta">
-             ${article.author ? `<span class="author">${article.author}</span>` : ""}
-             <span>• ${new Date(article.pubDate || article.published_at).toLocaleDateString()}</span>
+              ${article.author ? `<span class="author">${article.author}</span>` : ""}
+              <span>• ${new Date(article.pubDate || article.published_at).toLocaleDateString()}</span>
+            </div>
+            <a href="${article.url || article.link}" target="_blank" class="read-more-link">Read More →</a>
           </div>
-          <a href="${article.url || article.link}" target="_blank" class="read-more-link">Read More →</a>
-         </div>
         `;
         feed.appendChild(card);
       });
@@ -129,13 +129,10 @@
     }
   
     function loadArticles(reset = false) {
-      const source = feedSourceSelect.value;
+      const source = feedSourceSelect?.value;
       const isDevto = source === "devto";
-      const tag = tagSelect.value;
-      const author = authorSelect.value;
-  
-      // Toggle Load More visibility
-      document.querySelector(".load-more").style.display = "block";
+      const tag = tagSelect?.value;
+      const author = authorSelect?.value;
   
       if (reset) {
         feed.innerHTML = "Loading articles...";
@@ -187,7 +184,7 @@
     }
   
     function loadMore() {
-      const source = feedSourceSelect.value;
+      const source = feedSourceSelect?.value;
       if (source === "devto") {
         page++;
         loadArticles(false);
@@ -199,8 +196,34 @@
     document.querySelector(".controls button")?.addEventListener("click", () => loadArticles(true));
     document.querySelector(".load-more button")?.addEventListener("click", () => loadMore());
   
-    loadArticles(true);
+    if (feed) {
+      loadArticles(true);
+    }
   })();
+  
+  // ========== FLATLAND REFLECTION ANSWERS ==========
+  (() => {
+    // Only run this if we're on the Flatland Advisor page
+    if (window.location.href.includes("project3-flatland-advisor.html")) {
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggleButtons = document.querySelectorAll(".toggle-answer");
+  
+        toggleButtons.forEach(button => {
+          button.addEventListener("click", () => {
+            const answer = button.nextElementSibling;
+  
+            if (!answer || !answer.classList.contains("answer-content")) return;
+  
+            const isVisible = answer.style.display === "block";
+            answer.style.display = isVisible ? "none" : "block";
+            button.textContent = isVisible ? "Show Answer" : "Hide Answer";
+          });
+        });
+      });
+    }
+  })();
+  
+  
   
   
   
