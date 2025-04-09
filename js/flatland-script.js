@@ -6,7 +6,7 @@ function changeColour(color) {
     }
   }
   
-  // ========== STEP 5 & 6: DOMContentLoaded Events ==========
+  // ========== STEP 5–7: DOM handling ==========
   document.addEventListener("DOMContentLoaded", () => {
     const square = document.getElementById("square");
     const words = document.getElementById("words");
@@ -21,6 +21,7 @@ function changeColour(color) {
       words.textContent = "Welcome to Flatland! Interact with the square below 👇";
     }
   });
+  
   
   
   
