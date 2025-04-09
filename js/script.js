@@ -24,6 +24,20 @@ document.addEventListener("DOMContentLoaded", () => {
       requestAnimationFrame(scrollStep);
     });
   });
+
+// ========== INDEX HOMEPAGE ==========
+function showSection(id) {
+    const allSections = document.querySelectorAll(".about-content");
+    allSections.forEach(section => section.style.display = "none");
+  
+    const active = document.getElementById(id);
+    if (active) active.style.display = "block";
+  }
+  
+  // ✅ Add this line to expose the function for inline onclick
+  window.showSection = showSection;
+  
+  
   
   
 // ========== ROCK PAPER SCISSORS GAME ==========
