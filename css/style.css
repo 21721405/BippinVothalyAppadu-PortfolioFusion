@@ -233,6 +233,17 @@ footer {
   background-color: #000000;
 }
 
+
+@keyframes scroll-skills {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
 /* Responsive for index */
 @media (max-width: 768px) {
   .hero {
@@ -256,7 +267,6 @@ footer {
     }
   }
   
-
 
 /* ========== PROJECT 2: RPS GAME PAGE ========== */
 .game-section {
