@@ -26,5 +26,27 @@ body {
     border: 2px solid #222;
   }
 
+  /* Back-button for each steps (Global) */
+
+  #backToAdvisor {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 999;
+    font-size: 1rem;
+    padding: 10px 16px;
+    background-color: #2f2f4f;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    border: 2px solid #00bfff;
+    transition: all 0.3s ease;
+  }
+  
+  #backToAdvisor:hover {
+    background-color: #00bfff;
+    color: #111;
+    text-decoration: none;
+  }
   
   
