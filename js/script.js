@@ -1,3 +1,31 @@
+// Global Scroll-to-Top Button
+document.addEventListener("DOMContentLoaded", () => {
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+  
+    if (!scrollTopBtn) return;
+  
+    window.addEventListener("scroll", () => {
+      scrollTopBtn.style.display = (window.scrollY > 100) ? "block" : "none";
+    });
+  
+    // Custom fast scroll to top
+    scrollTopBtn.addEventListener("click", () => {
+      const duration = 300;
+      const start = window.scrollY;
+      const startTime = performance.now();
+  
+      function scrollStep(timestamp) {
+        const elapsed = timestamp - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        window.scrollTo(0, start * (1 - progress));
+        if (progress < 1) requestAnimationFrame(scrollStep);
+      }
+  
+      requestAnimationFrame(scrollStep);
+    });
+  });
+  
+  
 // ========== ROCK PAPER SCISSORS GAME ==========
 (() => {
     const choices = ["rock", "paper", "scissors"];
