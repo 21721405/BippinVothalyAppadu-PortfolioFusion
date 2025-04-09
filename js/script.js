@@ -28,16 +28,22 @@ document.addEventListener("DOMContentLoaded", () => {
 // ========== INDEX HOMEPAGE ==========
 function showSection(id) {
     const allSections = document.querySelectorAll(".about-content");
-    allSections.forEach(section => section.style.display = "none");
+    const selected = document.getElementById(id);
   
-    const active = document.getElementById(id);
-    if (active) active.style.display = "block";
+    if (!selected) return;
+  
+    const isVisible = selected.style.display === "block";
+  
+    // Hide all sections
+    allSections.forEach(section => {
+      section.style.display = "none";
+    });
+  
+    // Toggle the clicked one
+    if (!isVisible) {
+      selected.style.display = "block";
+    }
   }
-  
-  // ✅ Add this line to expose the function for inline onclick
-  window.showSection = showSection;
-  
-  
   
   
 // ========== ROCK PAPER SCISSORS GAME ==========
