@@ -8,21 +8,21 @@
 </head>
 <body>
 
-  <main>
-    <h1>Step 3: Introducing Multiple Events</h1>
-    <p>
-      This step adds functions for click, hover, and mouse out, handled via HTML attributes but
-      defined in an external JavaScript file.
+  <main class="flatland-step">
+    <h1>Step 3: Multiple Inline Events</h1>
+    <p class="description">
+      This step uses multiple inline event attributes to make the square interactive.
+      Try clicking, hovering, and moving your mouse away from the square.
     </p>
 
-    <div id="words">Hover over or click the square!</div>
+    <div id="words">Click or hover over the square below 👇</div>
     <div id="square"
-         onclick="makeRed()"
-         onmouseover="makeGreen()"
-         onmouseout="makeGray()">
+         onclick="this.style.backgroundColor='red'"
+         onmouseover="this.style.backgroundColor='green'"
+         onmouseout="this.style.backgroundColor='gray'">
     </div>
   </main>
 
-  <script src="../js/flatland-script.js"></script>
 </body>
 </html>
+
