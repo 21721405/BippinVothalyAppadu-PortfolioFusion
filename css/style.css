@@ -109,62 +109,55 @@ footer {
 }
 
 .hero .intro p {
-  font-size: 1.1rem;
-  color: #555;
+  font-size: 1.4rem;
+  color: #333;
+  font-weight: 600;
 }
+
+
 
 /* About block: image + about side-by-side */
 .about-block {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
-  flex-wrap: wrap;
+  gap: 4rem;
   text-align: left;
+  padding: 3rem 1rem;
+  max-width: 1400px;     /* wider layout */
+  margin: 0 auto;
+  flex-wrap: nowrap;     /* force horizontal layout */
 }
 
-/* Profile image */
+/* 🖼️ BIGGER Profile Picture */
 .profile-pic img {
-  width: 250px;
-  height: 250px;
+  width: 420px;
+  height: 420px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-/* About text */
+/* 📄 About Text Area */
 .about-me {
-  max-width: 500px;
+  flex: 1;
+  max-width: 700px;
+  margin-top: -70px;  /* nudges it up slightly */
 }
 
+
 .about-me h2 {
-  font-size: 2rem;
+  font-size: 2.6rem;
   margin-bottom: 1rem;
   text-transform: lowercase;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .about-me p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #333;
+  font-size: 1.3rem;
+  line-height: 1.9;
+  color: #ddd;
 }
 
-/* Learn More Button */
-.learn-more-btn {
-  display: inline-block;
-  margin-top: 1rem;
-  background-color: #191970;
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.learn-more-btn:hover {
-  background-color: #000000;
-}
 
 /* Portfolio section */
 .portfolio {
@@ -246,20 +239,23 @@ footer {
     padding: 2rem 1rem;
   }
 
-  .about-block {
-    flex-direction: column;
-    text-align: center;
+  @media (max-width: 900px) {
+    .about-block {
+      flex-direction: column;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+  
+    .about-me p {
+      text-align: center;
+    }
+  
+    .profile-pic img {
+      width: 280px;
+      height: 280px;
+    }
   }
-
-  .about-me {
-    text-align: center;
-  }
-
-  .profile-pic img {
-    width: 200px;
-    height: 200px;
-  }
-}
+  
 
 
 /* ========== PROJECT 2: RPS GAME PAGE ========== */
