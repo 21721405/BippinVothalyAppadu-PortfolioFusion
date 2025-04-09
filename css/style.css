@@ -630,4 +630,42 @@ footer {
   text-decoration: none;
 }
 
+.flatland-reflections {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.flatland-reflections h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.reflection-card {
+  background-color: #1a1a2e;
+  border: 2px solid #2f2f4f;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.reflection-card h3 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.reflection-card ul {
+  padding-left: 20px;
+}
+
+.reflection-card li {
+  color: #cccccc;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+
 
