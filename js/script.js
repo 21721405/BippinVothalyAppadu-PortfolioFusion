@@ -49,7 +49,6 @@ function showSection(id) {
   }
   
   
-  
 // ========== ROCK PAPER SCISSORS GAME ==========
 (() => {
     const choices = ["rock", "paper", "scissors"];
