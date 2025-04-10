@@ -443,7 +443,7 @@ footer {
 .explainer .intro-section h1 {
   font-size: 2.2rem;
   text-align: center;
-  color: #ff7f7f;
+  color: white;
   margin-bottom: 1rem;
 }
 
@@ -464,7 +464,7 @@ footer {
 }
 
 .explainer .info-section h2 {
-  color: #ffaaaa;
+  color: white;
   margin-bottom: 0.5rem;
 }
 
