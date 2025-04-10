@@ -393,11 +393,21 @@ footer {
     width: 280px;
     height: 280px;
   }
-
+  
   .glow-outline img {
     width: 260px;
     height: 260px;
   }
+  
+  /* Adjust glowing border ring for smaller screens */
+  .glow-outline::before {
+    top: -10px;
+    left: -10px;
+    width: 300px;
+    height: 300px;
+    border-width: 4px;
+  }
+  
 
   .about-me {
     text-align: center;
