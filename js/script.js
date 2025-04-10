@@ -254,27 +254,26 @@ function showSection(id) {
   
   // ========== FLATLAND REFLECTION ANSWERS ==========
   (() => {
+    // Only run this if we're on the Flatland Advisor page
     if (window.location.href.includes("project3-flatland-advisor.html")) {
       document.addEventListener("DOMContentLoaded", () => {
         const toggleButtons = document.querySelectorAll(".toggle-answer");
   
         toggleButtons.forEach(button => {
           button.addEventListener("click", () => {
-            const answer = button.nextElementSibling;
+            const parentLi = button.closest("li");
+            const answer = parentLi?.querySelector(".answer-content");
   
-            if (!answer || !answer.classList.contains("answer-content")) return;
+            if (!answer) return;
   
-            answer.classList.toggle("visible");
-  
-            button.textContent = answer.classList.contains("visible")
-              ? "Hide Answer"
-              : "Show Answer";
+            const isVisible = answer.style.display === "block";
+            answer.style.display = isVisible ? "none" : "block";
+            button.textContent = isVisible ? "Show Answer" : "Hide Answer";
           });
         });
       });
     }
   })();
-  
   
   
   
