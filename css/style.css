@@ -1050,13 +1050,20 @@ footer {
 }
 
 .answer-content {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
   margin-top: 8px;
-  padding-left: 10px;
   color: #a0e6ff;
   font-style: italic;
   font-size: 0.95rem;
-  display: none;
 }
+
+.answer-content.visible {
+  display: block;
+  opacity: 1;
+}
+
 
 
 
