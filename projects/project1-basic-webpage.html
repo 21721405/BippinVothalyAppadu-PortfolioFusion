@@ -1,66 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project 1: Responsive Feature Page</title>
-  <link rel="stylesheet" href="../css/project1-style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project 1 – Responsive Web Design Explainer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
+
+  <!-- Header (already styled globally) -->
   <header>
-    <div class="container">
-      <h1 class="logo">FusionWeb</h1>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+    <a href="../index.html" class="logo">
+      <img src="../images/bva.jpg" alt="BVA Logo" />
+    </a>
+    
+    <nav>
+      <a href="../index.html">HOME</a>
+      <a href="project1-basic-webpage.html" aria-current="page">ABOUT</a>
+      <a href="project2-rock-paper-scissors.html">RPS</a>
+      <a href="project3-flatland-advisor.html">FBA</a>
+      <a href="project4-rss-reader.html">RSS READER</a>
+    </nav>
+
+    <div class="socials">
+      <div class="tooltip">
+        <a href="https://www.linkedin.com/in/bippin-volthaly-appadu-7a170428a/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/24/174/174857.png" alt="LinkedIn" />
+        </a>
+        <span class="tooltip-text">Visit my LinkedIn</span>
+      </div>
+    
+      <div class="tooltip">
+        <a href="https://www.instagram.com/_bipps_/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/24/2111/2111421.png" alt="Instagram" />
+        </a>
+        <span class="tooltip-text">My Insta</span>
+      </div>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h2>Crafting Modern Experiences</h2>
-      <p>Using the power of HTML5 and CSS3 to build responsive, accessible, and stunning websites.</p>
-    </div>
-  </section>
+  <!-- Scoped main content -->
+  <main class="explainer">
+    <section class="intro-section">
+      <h1>Responsive Web Design:<br> Understanding HTML5, Flexbox & Grid</h1>
+      <p>This page explains the core building blocks of responsive web development using only HTML and CSS — no JavaScript. Let’s explore how structure and layout come together using modern tools.</p>
+    </section>
 
-  <section id="features" class="features">
-    <div class="container grid">
-      <div class="feature-card">
-        <h3>🚀 Fast Performance</h3>
-        <p>Our pages are optimized to load instantly and run smoothly across all devices.</p>
-      </div>
-      <div class="feature-card">
-        <h3>📱 Mobile Responsive</h3>
-        <p>Fully responsive layouts that adapt beautifully from phones to desktops.</p>
-      </div>
-      <div class="feature-card">
-        <h3>🎨 Customizable Design</h3>
-        <p>Flexible design systems to match your personal or business branding.</p>
-      </div>
-    </div>
-  </section>
+    <section class="info-section html5">
+      <h2>🔤 What is HTML5?</h2>
+      <p>HTML5 is the latest version of HyperText Markup Language. It structures content for the web using semantic tags.</p>
+      <ul>
+        <li><code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code> help organize layout</li>
+        <li><code>&lt;section&gt;</code>, <code>&lt;article&gt;</code> add meaning to content</li>
+        <li>Clean code = better accessibility and SEO</li>
+      </ul>
+      <pre><code>&lt;section&gt;
+  &lt;h2&gt;My Skills&lt;/h2&gt;
+  &lt;p&gt;HTML, CSS, JavaScript&lt;/p&gt;
+&lt;/section&gt;
+</code></pre>
+    </section>
 
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <form>
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-  </section>
+    <section class="info-section flexbox">
+      <h2>📦 What is Flexbox?</h2>
+      <p>Flexbox is a one-dimensional layout system used to align and space items within a container. It's great for building navbars, cards, and evenly spaced layouts.</p>
+      <ul>
+        <li>Aligns items horizontally or vertically</li>
+        <li>Uses <code>display: flex</code> on a parent container</li>
+        <li>Children use properties like <code>justify-content</code> and <code>align-items</code></li>
+      </ul>
+      <div class="flex-demo">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+      </div>
+    </section>
 
+    <section class="info-section grid">
+      <h2>🔲 What is CSS Grid?</h2>
+      <p>Grid is a two-dimensional layout system. It lets you place items in rows and columns with precision.</p>
+      <ul>
+        <li>Use <code>display: grid</code> on a container</li>
+        <li>Define columns and rows with <code>grid-template-columns</code></li>
+        <li>Control alignment and item placement with <code>grid-area</code> and <code>gap</code></li>
+      </ul>
+      <div class="grid-demo">
+        <div class="grid-box">1</div>
+        <div class="grid-box">2</div>
+        <div class="grid-box">3</div>
+        <div class="grid-box">4</div>
+      </div>
+    </section>
+
+    <section class="reflection">
+      <h2>🧠 My Reflection</h2>
+      <p>Creating this page helped me understand how each layout method serves a purpose. I now feel more confident using Flexbox and Grid to build responsive designs without needing any frameworks or JavaScript.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Bippin Volthaly Appadu. All rights reserved.</p>
+    <p>© 2025 Bippin Volthaly Appadu | Built with HTML, CSS, JS & AI 💡</p>
   </footer>
+
+  <script src="../js/script.js"></script>
+  <button id="scrollTopBtn" title="Go to top">⬆️</button>
 </body>
 </html>
+
+
+ 
+
 
 
 
