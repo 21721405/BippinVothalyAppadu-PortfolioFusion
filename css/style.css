@@ -259,10 +259,8 @@ footer {
 }
 
 .projects {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; 
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 2rem;
   padding: 2rem 1rem;
   background-color: #111;
