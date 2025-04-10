@@ -382,27 +382,44 @@ footer {
 }
 
 /* Responsive for index */
-@media (max-width: 768px) {}
-  .hero {
-    padding: 2rem 1rem;
+@media (max-width: 768px) {
+  .about-block {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem;
   }
 
-  @media (max-width: 900px) {
-    .about-block {
-      flex-direction: column;
-      flex-wrap: wrap;
-      text-align: center;
-    }
-  
-    .about-me p {
-      text-align: center;
-    }
-  
-    .profile-pic img {
-      width: 280px;
-      height: 280px;
-    }
+  .glow-outline {
+    width: 280px;
+    height: 280px;
   }
+
+  .glow-outline img {
+    width: 260px;
+    height: 260px;
+  }
+
+  .about-me {
+    text-align: center;
+    margin-top: 1.5rem;
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .about-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .about-content {
+    width: 100%;
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+}
+
 
 
 /* ========== PROJECT 1: BASIC WEBPAGE ========== */
