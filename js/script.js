@@ -261,9 +261,10 @@ function showSection(id) {
   
         toggleButtons.forEach(button => {
           button.addEventListener("click", () => {
-            const answer = button.nextElementSibling;
+            const parentLi = button.closest("li");
+            const answer = parentLi?.querySelector(".answer-content");
   
-            if (!answer || !answer.classList.contains("answer-content")) return;
+            if (!answer) return;
   
             const isVisible = answer.style.display === "block";
             answer.style.display = isVisible ? "none" : "block";
@@ -273,6 +274,7 @@ function showSection(id) {
       });
     }
   })();
+  
   
   
   
