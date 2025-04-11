@@ -203,6 +203,7 @@ footer {
   margin-bottom: 1rem;
   text-transform: lowercase;
   font-weight: 700;
+  color: #ffffff;
 }
 
 .about-me p {
@@ -707,7 +708,7 @@ footer {
 #gameResult {
   font-size: 1.2rem;
   font-weight: bold;
-  color: white;
+  color: #fff;
   margin-bottom: 10px;
 }
 
