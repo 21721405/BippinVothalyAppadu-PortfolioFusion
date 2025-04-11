@@ -1,3 +1,10 @@
+/* ========== Description: Contains the javascript for all the steps ========== */
+/* ========== Author: Bippin Volthaly Appadu ========== */
+/* ========== ID: 21721405 ========== */
+/* ========== Email: 217214@student.curtin.edu.au ========== */
+
+
+
 // ========== STEP 4: Parameterized function ==========
 function changeColour(color) {
     const square = document.getElementById("square");

@@ -1,3 +1,9 @@
+/* ========== Description: Contains the javascript for all the webpages ========== */
+/* ========== Author: Bippin Volthaly Appadu ========== */
+/* ========== ID: 21721405 ========== */
+/* ========== Email: 217214@student.curtin.edu.au ========== */
+
+
 // Global Scroll-to-Top Button
 document.addEventListener("DOMContentLoaded", () => {
     const scrollTopBtn = document.getElementById("scrollTopBtn");
