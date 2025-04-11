@@ -597,12 +597,14 @@ footer {
 
   
 /* ========== PROJECT 2: RPS GAME PAGE ========== */
+/* Main game section */
 .game-section {
   background-color: #000000;
   padding: 40px 20px 20px;
   text-align: center;
 }
 
+/* Container for the whole game */
 .game-container {
   max-width: 900px;
   margin: 0 auto;
@@ -612,6 +614,7 @@ footer {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Heading */
 .game-header h2 {
   font-size: 2rem;
   margin-bottom: 10px;
@@ -624,6 +627,7 @@ footer {
   margin-bottom: 30px;
 }
 
+/* Layout for score + choices */
 .game-content {
   display: flex;
   align-items: center;
@@ -635,19 +639,23 @@ footer {
   width: 100px;
   font-size: 1.1rem;
   color: white;
+  text-align: center;
 }
 
 .score p:first-child {
   margin-bottom: 5px;
 }
 
+/* Choices in the center */
 .choices-center {
   display: flex;
   gap: 40px;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
+/* Each choice button */
 .choice {
   display: flex;
   flex-direction: column;
@@ -660,16 +668,16 @@ footer {
 }
 
 .choice.rock {
-  background-color: #e74c3c; 
+  background-color: #e74c3c;
 }
 
 .choice.paper {
-  background-color: #f1c40f; 
+  background-color: #f1c40f;
   color: black;
 }
 
 .choice.scissors {
-  background-color: #2ecc71; 
+  background-color: #2ecc71;
 }
 
 .choice:hover {
@@ -677,22 +685,42 @@ footer {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
+/* Emoji inside choice */
 .choice-emoji {
   font-size: 60px;
   margin-bottom: 10px;
 }
 
-.choice:hover {
-  background-color: #333;
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+/* Display of choices made */
+.choice-display {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: white;
 }
 
-.choice-emoji {
-  font-size: 60px;
+#playerChoiceIcon,
+#computerChoiceIcon {
+  font-weight: bold;
+  color: white;
+}
+
+/* Result & scores */
+.game-footer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#gameResult {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
   margin-bottom: 10px;
 }
 
+/* Score display below result */
 .scoreboard-full {
   display: flex;
   justify-content: space-between;
@@ -706,23 +734,10 @@ footer {
 .score-right {
   font-weight: bold;
   font-size: 1.1rem;
+  color: white;
 }
 
-.game-footer {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-#gameResult {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #fff;
-  margin-bottom: 10px;
-}
-
+/* Reset button styling */
 .reset-button {
   text-align: center;
 }
@@ -785,24 +800,193 @@ footer {
 }
 
 @media (max-width: 600px) {
+  /* Main game section */
+.game-section {
+  background-color: #000000;
+  padding: 40px 20px 20px;
+  text-align: center;
+}
+
+/* Container for the whole game */
+.game-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Heading */
+.game-header h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.subtext {
+  color: #ccc;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+/* Layout for score + choices */
+.game-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.score {
+  width: 100px;
+  font-size: 1.1rem;
+  color: white;
+  text-align: center;
+}
+
+.score p:first-child {
+  margin-bottom: 5px;
+}
+
+/* Choices in the center */
+.choices-center {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Each choice button */
+.choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+}
+
+.choice.rock {
+  background-color: #e74c3c;
+}
+
+.choice.paper {
+  background-color: #f1c40f;
+  color: black;
+}
+
+.choice.scissors {
+  background-color: #2ecc71;
+}
+
+.choice:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Emoji inside choice */
+.choice-emoji {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+/* Display of choices made */
+.choice-display {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: white;
+}
+
+#playerChoiceIcon,
+#computerChoiceIcon {
+  font-weight: bold;
+  color: white;
+}
+
+/* Result & scores */
+.game-footer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#gameResult {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* Score display below result */
+.scoreboard-full {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+}
+
+.score-left,
+.score-right {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: white;
+}
+
+/* Reset button styling */
+.reset-button {
+  text-align: center;
+}
+
+#resetGame {
+  background-color: transparent;
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#resetGame:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 600px) {
   .choices-center {
+    flex-direction: column;
     gap: 1rem;
-    padding: 0 1rem;
   }
 
   .choice {
-    width: 80px;
+    width: 100%;
+    max-width: 180px;
     padding: 10px;
   }
 
   .choice-emoji {
-    font-size: 40px; /* scale down on smaller screens */
+    font-size: 50px;
   }
 
-  .choice p {
-    font-size: 0.9rem;
+  .game-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .scoreboard-full {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
 }
+
 
 /* ========== PROJECT 4: RSS READER ========== */
 .rss-wrapper {
