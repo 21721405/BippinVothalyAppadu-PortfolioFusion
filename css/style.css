@@ -83,34 +83,6 @@ nav a, .socials a {
 
 
 /* ========== FOOTER (SHARED) ========== */
-footer {
-  background-color: #191970; /* midnight blue */
-  color: white;
-  padding: 1rem;
-  text-align: center;
-  font-size: 1rem;
-}
-
-.footer-content {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.footer-content p {
-  margin: 0;
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.wcag-badge {
-  height: 28px;
-  vertical-align: middle;
-}
-
-
 
 #scrollTopBtn {
   position: fixed;
@@ -138,7 +110,7 @@ footer {
 
 /* ========== INDEX.HTML SPECIFIC ========== */
 .hero, .portfolio {
-  background-color: #ffffff;
+  background-color: #000000;
 }
 
 /* Full hero layout */
