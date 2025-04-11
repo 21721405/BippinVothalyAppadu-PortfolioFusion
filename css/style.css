@@ -286,12 +286,13 @@ footer {
 /* Project Card Grid */
 .projects {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 in a row */
+  grid-template-columns: repeat(4, 1fr); /* 4 in a row on desktop */
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
+
 
 
 /* Individual Cards */
@@ -459,7 +460,6 @@ footer {
     border-width: 4px;
   }
   
-
   .about-me {
     text-align: center;
     margin-top: 1.5rem;
@@ -481,6 +481,17 @@ footer {
   }
 }
 
+@media (max-width: 1024px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr); /* 2 in a row on tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .projects {
+    grid-template-columns: 1fr; /* 1 in a row on mobile */
+  }
+}
 
 
 /* ========== PROJECT 1: BASIC WEBPAGE ========== */
