@@ -6,13 +6,6 @@ Each project demonstrates real-world frontend development techniques including r
 
 ---
 
-## 🔗 Live Site
-
-Visit the deployed site on Netlify:  
-👉 [https://bippin-portfoliofusion.netlify.app/]
-
----
-
 ## 📂 Projects Included
 
 ### 💻 **Index Homepage**
