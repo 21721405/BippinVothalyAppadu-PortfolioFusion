@@ -9,7 +9,7 @@ Each project demonstrates real-world frontend development techniques including r
 ## 🔗 Live Site
 
 Visit the deployed site on Netlify:  
-👉 [https://your-netlify-link.netlify.app](https://your-netlify-link.netlify.app)
+👉 [https://bippin-portfoliofusion.netlify.app/]
 
 ---
 
